@@ -1,15 +1,17 @@
 package com.axioma.axiomatrainee.security;
 
-import org.springframework.http.HttpHeaders;
+import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
+import org.springframework.web.cors.CorsConfiguration;
+import org.springframework.web.cors.CorsConfigurationSource;
+import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
 import javax.servlet.*;
-import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebFilter(asyncSupported = true, urlPatterns = "/**")
+@Component
 public class HeadersFilter implements Filter {
 
     @Override
